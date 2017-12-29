@@ -72,8 +72,8 @@
         that.noSuggestionsContainer = null;
         that.options = $.extend({}, Autocomplete.defaults, options);
         that.classes = {
-            selected: 'autocomplete-selected',
-            suggestion: 'autocomplete-suggestion'
+            selected: that.options.selectedClass,
+            suggestion: that.options.suggestionClass
         };
         that.hint = null;
         that.hintValue = '';
@@ -111,6 +111,8 @@
             onSearchError: noop,
             preserveInput: false,
             containerClass: 'autocomplete-suggestions',
+            selectedClass: 'autocomplete-selected',
+            suggestionClass: 'autocomplete-suggestion',
             tabDisabled: false,
             dataType: 'text',
             currentRequest: null,
